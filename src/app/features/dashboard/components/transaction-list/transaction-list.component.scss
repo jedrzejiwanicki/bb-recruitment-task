@@ -1,0 +1,51 @@
+@import "src/styles/colors";
+@import "src/styles/typography";
+
+.transaction-list {
+  &__content {
+    max-height: 600px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #FF0000;
+    }
+
+  }
+
+  &__item {
+    width: 100%;
+    height: 90px;
+    border-top: 1px solid rgba($grey, 0.1);
+    border-bottom: 1px solid rgba($grey, 0.1);
+  }
+
+  &__item-color {
+    width: 5px;
+    height: 100%;
+  }
+
+  &__item-amount {
+    flex: 1;
+    text-align: right;
+    color: $green;
+
+    &--negative {
+      color: $danger-red;
+    }
+  }
+
+  &__item-merchant {
+    font-size: $font-size-l;
+    line-height: 0.9;
+  }
+
+  &__item-type {
+    color: $grey;
+    font-size: $font-size-sm;
+  }
+}

@@ -1,0 +1,20 @@
+<app-card icon="lni lni-list">
+  <div bb-card-title><strong>Transaction</strong> List</div>
+  <div bb-card-content>
+    <app-filter (inputChange)="onInputChange($event)"></app-filter>
+    <main class="transaction-list__content">
+      <app-transaction-item *ngFor="let transaction of transactions$ | async" class="transaction-list__item d-flex my-3 py-2 align-items-center">
+        <div data-test-hook='transactionColour' [style.backgroundColor]="transaction.categoryCode" class="transaction-list__item-color"></div>
+        <div data-test-hook='transactionDate' class="transaction-list__item-date mx-3 mr-3"> {{ transaction.dates.valueDate | date: 'MMM.d'}}</div>
+        <div data-test-hook='transactionMerchantName' class="transaction-list__item-merchant"> {{ transaction.merchant.name }}</div>
+        <div data-test-hook='transactionType' class="transaction-list__item-type"> {{ transaction.transaction.type }}</div>
+        <div data-test-hook='transactionAmount'
+             class="transaction-list__item-amount pr-2"
+             [class.transaction-list__item-amount--negative]="getTransactionSymbol(transaction) === '-'"
+        >
+          {{ transaction.transaction.amountCurrency.currencyCode | currencyToCode }} {{ getTransactionSymbol(transaction) }}{{ transaction.transaction.amountCurrency.amount }}
+        </div>
+      </app-transaction-item>
+    </main>
+  </div>
+</app-card>

@@ -1,0 +1,12 @@
+<div class="bb-card">
+  <header class="bb-card__header px-2 py-3 d-flex align-items-center">
+    <i class="{{icon}} bb-card__icon mr-3 ml-2"></i>
+    <span class="bb-card__title">
+          <ng-content select="[bb-card-title]"></ng-content>
+    </span>
+  </header>
+
+  <div class="bb-card__content p-4">
+    <ng-content select="[bb-card-content]"></ng-content>
+  </div>
+</div>

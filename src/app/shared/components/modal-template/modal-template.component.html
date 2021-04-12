@@ -1,0 +1,18 @@
+<div class="modal-template">
+  <nav class="modal-template__navigation px-4 pt-2 pb-1 d-flex justify-content-between align-items-center">
+      <h4 class="modal-template__title">
+        <ng-content select="[modal-template-title]"></ng-content>
+      </h4>
+      <button type="button" class="modal-template__close"(click)="close()">
+        <i class="lni lni-close"></i>
+      </button>
+  </nav>
+
+  <main class="modal-template__container">
+    <ng-content></ng-content>
+  </main>
+
+  <footer class="modal-template__footer d-flex justify-content-end px-4 pt-2 pb-2">
+    <ng-content select="[modal-template-footer]"></ng-content>
+  </footer>
+</div>

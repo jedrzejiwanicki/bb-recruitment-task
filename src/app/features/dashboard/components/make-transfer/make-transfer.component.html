@@ -1,0 +1,54 @@
+<app-card [icon]="'lni lni-credit-cards'">
+  <div bb-card-title><strong>Make</strong> Transfer</div>
+  <div bb-card-content>
+    <form [formGroup]="form" *ngIf="data">
+      <div class="form-group">
+        <label for="fromAccount">From Account</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="fromAccount"
+            value="My Personal Account: {{ data.currencyCode }} {{ data.balance }}"
+            disabled
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="toAccount">To Account</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="toAccount"
+            placeholder="type an account name"
+            formControlName="toAccount"
+          >
+        </div>
+        <app-form-error [control]="form.get('toAccount')"></app-form-error>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">{{ data.currencyCode }}</span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="amount"
+            placeholder="specify the amount"
+            formControlName="amount"
+          >
+        </div>
+        <app-form-error [control]="form.get('amount')"></app-form-error>
+      </div>
+
+      <div class="justify-content-end d-flex">
+        <app-submit-button (submitForm)="onSubmit()"></app-submit-button>
+      </div>
+    </form>
+  </div>
+</app-card>

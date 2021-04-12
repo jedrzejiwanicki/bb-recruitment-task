@@ -1,0 +1,31 @@
+<app-modal-template (dismiss)="close(false)">
+  <ng-container modal-template-title>
+    <strong>Review</strong> Transfer
+  </ng-container>
+
+  <div class="review-transaction__content px-4 py-2">
+    <p class="my-2">
+      <em>
+        Are you ready to send out this transfer?
+      </em>
+    </p>
+
+    <p class="my-2">
+      <strong>It will be send to account:</strong>
+    </p>
+
+    <p class="my-2">{{ event.toAccount }}</p>
+
+    <p class="my-2">
+      <strong>With the amout of:</strong>
+    </p>
+
+    <p class="my-2">{{ event.currencyCode}} {{ event.amount }}</p>
+
+  </div>
+
+  <ng-container modal-template-footer>
+    <button type="button" class="btn btn-outline-secondary mx-1" (click)="close(false)">Close</button>
+    <button type="button" class="btn btn-primary ml-1" (click)="close(true)">Send</button>
+  </ng-container>
+</app-modal-template>

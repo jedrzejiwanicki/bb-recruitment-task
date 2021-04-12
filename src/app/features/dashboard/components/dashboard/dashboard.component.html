@@ -1,0 +1,14 @@
+<app-template>
+  <div class="row mt-5">
+    <div class="col-4">
+      <app-make-transfer
+        [data]="makeTransferData$ | async"
+        (transferRequested)="onRequestedTransfer($event)">
+      </app-make-transfer>
+    </div>
+
+    <div class="col-8">
+      <app-transaction-list [data]="transactions$ | async"></app-transaction-list>
+    </div>
+  </div>
+</app-template>
