@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
+import {combineLatest, Observable} from 'rxjs';
+import {map, take} from 'rxjs/operators';
+
 import {TransactionHttpService} from './transaction-http.service';
 import {AccountHttpService} from './account-http.service';
-import {combineLatest, Observable} from 'rxjs';
 import {MakeTransferInput} from '../model/make-transfer-input';
-import {map, take} from 'rxjs/operators';
 import {mapCurrencyToCode} from '../../../shared/mappers/currency-to-code';
 import {Transaction} from '../model/transaction';
 import {NewTransferEvent} from '../model/new-transfer-event';
-import {makeTransaction} from '../utils/make-transaction';
 import {ReviewTransactionService} from './review-transaction.service';
 import {MyAccount} from '../model/my-account';
 

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Observable} from 'rxjs';
+
 import {ReviewTransactionComponent} from '../components/review-transaction/review-transaction.component';
 import {NewTransferEvent} from '../model/new-transfer-event';
 

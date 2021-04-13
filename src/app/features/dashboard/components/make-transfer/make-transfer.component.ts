@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+
 import {MakeTransferInput} from '../../model/make-transfer-input';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {validatePositiveNumber} from '../../../../shared/validators/positive-number.validator';
 import {validateRequired} from '../../../../shared/validators/required.validator';
 import {validateAdjecentControlValueLessThan} from '../../../../shared/validators/adjecent-control-value-less-than.validator';

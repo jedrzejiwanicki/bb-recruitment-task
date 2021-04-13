@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {NewTransferEvent} from '../../model/new-transfer-event';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
+import {NewTransferEvent} from '../../model/new-transfer-event';
 
 @Component({
   selector: 'app-review-transaction',

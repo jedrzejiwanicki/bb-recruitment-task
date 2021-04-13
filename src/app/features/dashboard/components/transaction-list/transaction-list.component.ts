@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
-import {Transaction, TransactionDebitIndicator, TransactionSymbol, TransactionType} from '../../model/transaction';
+import {Transaction, TransactionDebitIndicator, TransactionSymbol} from '../../model/transaction';
 
 @Component({
   selector: 'app-transaction-list',

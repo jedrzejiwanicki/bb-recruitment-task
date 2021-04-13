@@ -1,8 +1,9 @@
+import {of} from 'rxjs';
+
 import {DashboardService} from './dashboard.service';
 import {TransactionHttpService} from './transaction-http.service';
 import {AccountHttpService} from './account-http.service';
 import {ReviewTransactionService} from './review-transaction.service';
-import {of} from 'rxjs';
 import {Transaction} from '../model/transaction';
 import {Currency, CurrencyCode} from '../../../shared/enums/currency';
 
